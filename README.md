@@ -47,13 +47,13 @@ trovit_php_code_validator:
     validator_services:
       - 'trovit.php_code_validator.validators.parallel_lint_validator'
     php_cs_config:
-        - reports:
+        reports:
             json: ~
-        - verbosity: 0
-        - showProgress: false
-        - interactive: false
-        - cache: false
-        - showSources: true
+        verbosity: 0
+        showProgress: false
+        interactive: false
+        cache: false
+        showSources: true
 ```
 ### Step 4 (optional): Create your own Validator
 
