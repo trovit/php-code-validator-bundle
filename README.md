@@ -66,7 +66,7 @@ After that, you have to register the validator as a service and add the service 
 
 Get the manager service wherever you want to call the method *execute* with the bad code (syntax errors for example) as a parameter. It will return the errors in a PhpCodeValidatorResult object.
 
-Example with a php lint ([PrallelLint](https://github.com/JakubOnderka/PHP-Parallel-Lint)):
+Example with a php lint ([PHP Prallel Lint](https://github.com/JakubOnderka/PHP-Parallel-Lint)):
 ```php
 // src/AppBundle/Controller/DefaultController.php
 
@@ -93,6 +93,6 @@ $result->getErrors(); //will return an array of PhpCodeValidatorProblem:
 ## List of available validators
 
 - *CodeSnifferValidator*: Wrapper of [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer)
-- *ParallelLintValidator*: Wrapper of [Parallel Lint Validator](https://github.com/JakubOnderka/PHP-Parallel-Lint)
+- *ParallelLintValidator*: Wrapper of [PHP Parallel Lint](https://github.com/JakubOnderka/PHP-Parallel-Lint)
 
 Feel free to add more validators and contribute by PR!
