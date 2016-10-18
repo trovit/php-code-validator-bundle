@@ -32,20 +32,20 @@ public function registerBundles()
 
 There are only 2 parameters available at the moment:
 
-- *temporary_path* _(string)_: temporary path where the temporary files should be created. This is necessary for those validator libraries that only works with filesystem.
+- **temporary_path** _(required, string)_: temporary path where the temporary files should be created. This is necessary for those validator libraries that only works with filesystem.
 
-- *validator_services* _(string[])_: each string represents the reference name of a validator service
+- **validator_services** _(string[])_: each string represents the reference name of a validator service
 
-- *php_cs_config* _(string[])_: each string represents one of the configurations available in [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer)
+- **php_cs_config** _(string[])_: each string represents one of the configurations available in [PHP Code Sniffer](https://github.com/squizlabs/PHP_CodeSniffer).
 
 
-Example:
+Example (_all defaults except temporary_path_):
 ```yaml
 # app/config.yml
 trovit_php_code_validator:
     temporary_path: "%kernel.cache_dir%/tmp/"
     validator_services:
-      - 'trovit.php_code_validator.validators.php_cs_validator'
+      - 'trovit.php_code_validator.validators.parallel_lint_validator'
     php_cs_config:
         - reports:
             json: ~
@@ -57,7 +57,7 @@ trovit_php_code_validator:
 ```
 ### Step 4 (optional): Create your own Validator
 
-When you need to format your code and the validators provided by this bundle doesn't satisfy your needs (different code language, formats, etc...) there is the possibility to create a new Validator class by implementing the Validator interface (_Trovit\PhpCodeValidator\Validators\Validator_) and implement its method *formatCode*
+When you need to validate or check your code and the validators provided by this bundle doesn't satisfy your needs (different code language, formats, etc...) there is the possibility to create a new Validator class by implementing the Validator interface (_Trovit\PhpCodeValidator\Validators\Validator_) and implement its method *formatCode*
 
 After that, you have to register the validator as a service and add the service reference name in the config (_check step 3_).
 
