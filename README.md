@@ -57,7 +57,7 @@ trovit_php_code_validator:
 ```
 ### Step 4 (optional): Create your own Validator
 
-When you need to validate or check your code and the validators provided by this bundle doesn't satisfy your needs (different code language, formats, etc...) there is the possibility to create a new Validator class by implementing the Validator interface (_Trovit\PhpCodeValidator\Validators\Validator_) and implement its method *formatCode*
+When you need to validate or check your code and the validators provided by this bundle doesn't satisfy your needs (different code language, formats, etc...) there is the possibility to create a new Validator class by implementing the Validator interface (_Trovit\PhpCodeValidator\Validators\Validator_) and implement its method *checkCode*
 
 After that, you have to register the validator as a service and add the service reference name in the config (_check step 3_).
 
@@ -75,7 +75,7 @@ $code = '<?php echo "hola ?>'; //missing "
 // This will return a PhpCodeValidatorResult object wich contains an array of detected problems
 $result = $this->get('trovit.php_code_validator.managers.validator_manager')->execute($code);
 
-$result->hasErrors(); // will return 1 (hasWarnings() is also available if needed)
+$result->hasErrors(); // will return true (hasWarnings() is also available if needed)
 
 $result->getErrors(); //will return an array of PhpCodeValidatorProblem:
 
