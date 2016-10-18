@@ -70,7 +70,7 @@ Example with a php lint ([PrallelLint](https://github.com/JakubOnderka/PHP-Paral
 ```php
 // src/AppBundle/Controller/DefaultController.php
 
-$code = '<?php echo "hola" ?>'; //missing ;
+$code = '<?php echo "hola ?>'; //missing "
 
 // This will return a PhpCodeValidatorResult object wich contains an array of detected problems
 $result = $this->get('trovit.php_code_validator.managers.validator_manager')->execute($code);
