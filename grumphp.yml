@@ -1,0 +1,30 @@
+parameters:
+    git_dir: .
+    bin_dir: vendor/bin
+    tasks:
+        phplint: ~
+        composer: ~
+        git_blacklist:
+            keywords:
+                - "die("
+                - "exit;"
+            triggered_by: [php]
+        git_conflict: ~
+        jsonlint: ~
+        phpcpd:
+            directory: '.'
+            exclude: ['vendor']
+            fuzzy: false
+            min_lines: 5
+            min_tokens: 70
+            triggered_by: ['php']
+        phpcs:
+            standard: PSR2
+            show_warnings: true
+            tab_width: ~
+            encoding: ~
+            sniffs: []
+            triggered_by: [php]
+        securitychecker: ~
+        yamllint: ~
+        phpunit: ~

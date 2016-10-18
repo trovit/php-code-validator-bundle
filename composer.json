@@ -1,0 +1,36 @@
+{
+    "name": "trovit/php-code-validator-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Trovit",
+            "email": "github@trovit.com"
+        }
+    ],
+    "description": "Provides a basic system to organize and execute php code validators",
+    "type": "symfony-bundle",
+    "require": {
+        "symfony/framework-bundle": "^2.8|^3.1",
+        "trovit/php-code-validator": "^1.0"
+    },
+    "require-dev": {
+        "matthiasnoback/symfony-config-test": "^2.0",
+        "phpro/grumphp": "^0.9.5",
+        "friendsofphp/php-cs-fixer": "^1.12",
+        "sebastian/phpcpd": "^2.0",
+        "sensiolabs/security-checker":"^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Trovit\\PhpCodeValidatorBundle\\": ""
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload-dev": {
+        "psr-4": {
+            "Trovit\\PhpCodeValidatorBundle\\Tests\\Functional\\": "tests/functional",
+            "Trovit\\PhpCodeValidatorBundle\\Tests\\Unit\\": "tests/unit"
+        }
+    }
+}

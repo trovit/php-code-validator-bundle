@@ -1,0 +1,18 @@
+services:
+  trovit.temporary_filesystem.file_handler:
+    class: Trovit\TemporaryFilesystem\FileHandler
+    arguments:
+      - '%trovit_php_code_validator.temporary_path%'
+
+  trovit.php_code_validator.validators.php_cs_validator:
+    class: Trovit\PhpCodeValidator\Model\Validators\CodeSnifferValidator
+    arguments:
+      - '%trovit_php_code_validator.php_cs_config%'
+
+  trovit.php_code_validator.validators.parallel_lint_validator:
+    class: Trovit\PhpCodeValidator\Model\Validators\ParallelLintValidator
+    arguments:
+      - '@trovit.temporary_filesystem.file_handler'
+
+  trovit.php_code_validator.managers.validator_manager:
+    class: Trovit\PhpCodeValidator\Model\Managers\ValidatorManager
