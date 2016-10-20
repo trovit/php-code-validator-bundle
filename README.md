@@ -22,7 +22,7 @@ public function registerBundles()
 {
     $bundles = array(
         // ...
-        new Trovit\PhpCodeValidatorBundle\PhpCodeValidatorBundle(),
+        new Trovit\PhpCodeValidatorBundle\TrovitPhpCodeValidatorBundle(),
         // ...
     );
 }
