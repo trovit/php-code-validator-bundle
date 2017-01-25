@@ -4,8 +4,9 @@ php:
     - 5.6
     - 7.0
     
-script: phpunit --coverage-text
-
+script:
+    - ./vendor/bin/grumphp run
+    
 env:
     - SYMFONY_VERSION="^2.8"
     - SYMFONY_VERSION="^3.1"
@@ -13,3 +14,5 @@ env:
 install:
     - if [ "$SYMFONY_VERSION" != "" ]; then composer require "symfony/framework-bundle:${SYMFONY_VERSION}" --no-update; fi;
     - composer update
+
+
