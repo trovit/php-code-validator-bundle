@@ -18,7 +18,8 @@
         "phpro/grumphp": "^0.9.5",
         "friendsofphp/php-cs-fixer": "^1.12",
         "sebastian/phpcpd": "^2.0",
-        "sensiolabs/security-checker":"^3.0"
+        "sensiolabs/security-checker":"^3.0",
+        "phpunit/phpunit": "5.7.*"
     },
     "autoload": {
         "psr-4": {
